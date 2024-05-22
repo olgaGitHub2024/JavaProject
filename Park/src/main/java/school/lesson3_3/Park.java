@@ -13,8 +13,7 @@ public class Park {
     public void printAttractions() {
         if (attractions != null) {
             for (Attraction attraction: attractions) {
-                System.out.println("Аттракцион '"+ attraction.getName()+ "' работает с " + attraction.getTimeFrom() +
-                        " до " + attraction.timeTo + " и стоит " + attraction.getCost());
+                System.out.println(attraction.getAttractionInfo());
             }
         }
     }
@@ -48,5 +47,11 @@ public class Park {
         public double getCost () {
             return cost;
         }
+
+        public String getAttractionInfo() {
+            return "Аттракцион '"+ getName()+ "' работает с " + getTimeFrom() +
+                    " до " + timeTo + " и стоит " + getCost();
+        }
     }
 }
+
