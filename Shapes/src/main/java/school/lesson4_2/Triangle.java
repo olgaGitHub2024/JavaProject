@@ -19,6 +19,7 @@ public class Triangle implements Shape {
             return side1 + side2 + side3;
         }
 
+        @Override
         public double calculateArea(){
             double halfPerimeter = calculatePerimeter()/2;
             return Math.sqrt(halfPerimeter * (halfPerimeter-side1) * (halfPerimeter-side2) * (halfPerimeter-side3));

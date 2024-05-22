@@ -19,6 +19,7 @@ public class Circle implements Shape {
             return Math.PI*radius*radius;
         }
 
+        @Override
         public void setFillColor(String color) {
             this.fillColor = color;
         }
