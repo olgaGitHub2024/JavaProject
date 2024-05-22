@@ -34,7 +34,7 @@ public class Main {
 
         System.out.println("Всего животных: " + Animal.getCountAnimal());
         System.out.println("Всего котов: " + Cat.getCountCat());
-        System.out.println("Всего собак: " + Dog.getCountDod());
+        System.out.println("Всего собак: " + Dog.getCountDog());
         System.out.println();
 
         Cat[] cats = new Cat[3];

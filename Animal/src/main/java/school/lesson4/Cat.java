@@ -4,7 +4,7 @@ public class Cat extends Animal {
     private String name;
     private boolean hungry;
     static int countCat = 0;
-    private int runLimit = 200;
+    private final int RUN_LIMIT = 200;
 
     public Cat (String name){
         super();
@@ -15,8 +15,8 @@ public class Cat extends Animal {
 
     @Override
     public void run(int distance) {
-        if (distance > runLimit) {
-            System.out.println(name+ " не может бежать больше 200 м");
+        if (distance > RUN_LIMIT) {
+            System.out.println(name+ " не может бежать больше " + RUN_LIMIT + " м");
         } else {
             System.out.println(name + " пробежал " + distance + " м");
         }
