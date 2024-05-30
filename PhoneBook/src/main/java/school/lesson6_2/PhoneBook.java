@@ -4,20 +4,20 @@ import java.util.*;
 
 public class PhoneBook {
 
-    private HashMap<String, String> phoneBook = new HashMap<>();
+    private HashMap<String, List<String>> phoneBook = new HashMap<>();
 
     public void add(String phoneNumber, String surname){
-        phoneBook.put(phoneNumber, surname);
+        List<String> phones = phoneBook.get(surname);
+        if (phones == null) {
+            phones = new ArrayList<>();
+            phoneBook.put(surname, phones);
+        }
+        phones.add(phoneNumber);
     }
 
     public List<String> get(String surname){
-        List<String> phoneNumbers = new ArrayList<>();
-        for (Map.Entry<String, String> phoneRecord: phoneBook.entrySet()) {
-            if(surname.equals(phoneRecord.getValue())) {
-                phoneNumbers.add(phoneRecord.getKey());
-            }
-        }
-        return phoneNumbers;
+        return phoneBook.get(surname);
     }
 }
+
 
