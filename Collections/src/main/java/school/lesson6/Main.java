@@ -10,17 +10,8 @@ public class Main {
 
         String[] arrayList = {"Вася", "Петя","Cвета", "Коля","Лена","Аня", "Лена","Андрей","Коля","Лена", "Дима"};
 
-        HashSet<String> uniqueItems = new HashSet<>();
-        for (String word: arrayList){
-            uniqueItems.add(word);
-        }
-
-        System.out.println("Cписок уникальных слов, из которых состоит массив: ");
-        for (String uniqueItem: uniqueItems) {
-            System.out.println(uniqueItem);
-        }
-
         HashMap <String, Integer> quantity = new HashMap<>();
+
         for (String word: arrayList){
             if (quantity.containsKey(word)){
                 quantity.put(word, quantity.get(word) + 1);
@@ -28,6 +19,12 @@ public class Main {
                 quantity.put(word,1);
             }
         }
+
+        System.out.println("Cписок уникальных слов: " );
+        for (Map.Entry<String, Integer> o : quantity.entrySet()) {
+            System.out.println(o.getKey());
+        }
+
         System.out.println("Количество вхождений каждого слова:");
         for (Map.Entry<String, Integer> entry: quantity.entrySet()){
             System.out.println(entry.getKey() + ": " + entry.getValue());
