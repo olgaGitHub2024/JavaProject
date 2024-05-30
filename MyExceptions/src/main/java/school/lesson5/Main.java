@@ -12,6 +12,7 @@ public class Main {
         };
 
         try {
+            MyArray.sizeValidation(arr);
             System.out.println("Cумма элементов массива = " + MyArray.sumArrayItems(arr));
         } catch (MyArraySizeException e) {
             System.out.println(e.getMessage());
