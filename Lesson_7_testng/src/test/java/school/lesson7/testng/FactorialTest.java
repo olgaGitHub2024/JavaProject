@@ -14,25 +14,20 @@ public class FactorialTest {
         factorial = new Factorial();
     }
 
-
     @Test(description = "Проверка факториала для положительного числа", priority = 1)
-    void factorialPositiveNumber() {
-
+    public void factorialPositiveNumber() {
         int actual = factorial.calculationFactorial(5);
         assertEquals (120, actual);
     }
-
 
     @Test(description = "Проверка факториала для отрицательного числа", expectedExceptions = IllegalArgumentException.class, priority = 0)
     public void factorialNegativeNumber() {
         int actual = factorial.calculationFactorial(-1);
         assertEquals("Нельзя вычислить факториал отрицательного числа!", actual);
-
     }
 
     @DataProvider(name = "numbers")
     public static Object[][] checkNumbers() {
-
         return new Object[][]{{0, true}, {1, true}};
     }
 
@@ -40,6 +35,5 @@ public class FactorialTest {
     public void factorialZeroOrOne(int number, boolean expected)  {
         int actual = factorial.calculationFactorial(number);
         assertEquals(expected, actual == 1);
-
     }
 }
