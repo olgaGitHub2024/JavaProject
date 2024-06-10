@@ -19,7 +19,7 @@ public class FactorialTest {
 
     @Test
     @DisplayName("Проверка факториала для положительного числа")
-    void calculationFactorial() {
+    public void calculationFactorial() {
         int actual = factorial.calculationFactorial(5);
         assertEquals(120, actual);
     }
@@ -28,7 +28,7 @@ public class FactorialTest {
     @ValueSource(ints = {0,1})
     @DisplayName("Проверка факториала для нуля и единицы")
     public void factorialZeroOrOne(int num){
-        int actualForZeroOrOne = factorial.calculationFactorial(num);       ;
+        int actualForZeroOrOne = factorial.calculationFactorial(num);
         assertEquals(1, actualForZeroOrOne);
     }
 
@@ -39,5 +39,4 @@ public class FactorialTest {
                 () -> factorial.calculationFactorial(-1));
         assertEquals("Нельзя вычислить факториал отрицательного числа!", thrown.getMessage());
     }
-
 }
