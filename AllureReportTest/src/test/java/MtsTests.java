@@ -30,7 +30,6 @@ public class MtsTests {
         cancelCookie.click();
     }
 
-
     @Test(testName = "Проверка надписей в незаполненных полях для 'Услуги связи'", description = "Проверка надписей в незаполненных полях для варианта оплаты 'Услуги связи'", priority = 0)
     public void сheckFieldsForCommunicationServices() {
         String phoneNumber = driver.findElement(By.xpath("//input[@id='connection-phone']")).getAttribute("placeholder");
